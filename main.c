@@ -6,13 +6,15 @@ int main()
 {
 	printf("------------------- Matrix -------------------\n\n");
 
-	Matrix* scale = matrix_create_scale(0.5, 0.5, 0.5);
-	printf("Scale: \n%s\n", matrix_string(scale));
-	Matrix* base = matrix_create_identity_44();
-	Matrix* transform = matrix_times(base, scale);
-	printf("Transform: \n%s\n", matrix_string(transform));
-	Matrix* inverse = matrix_create_inverse(transform);
-	printf("Inverse: \n%s\n", matrix_string(inverse));
+	Matrix* base1 = matrix_create_identity_44();
+	printf("Base: \n%s\n", matrix_string(base1));
+	Matrix* translation = matrix_create_translation(-2, 0, 0);
+	printf("Translation: \n%s\n", matrix_string(translation));
+	Matrix* result1 = matrix_times(base1, translation);
+	printf("Result: \n%s\n", matrix_string(result1));
+
+	Matrix* inv = matrix_create_inverse(result1);
+	printf("Inverse: \n%s\n", matrix_string(inv));
 
 	return 0;
 }
