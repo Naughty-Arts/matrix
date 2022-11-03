@@ -10,8 +10,18 @@
 #endif
 
 #ifndef EQ
-#define EQ(F1, F2) abs((F1) - (F2)) < EPSILON
+#define EQ(F1, F2) fabs((F1) - (F2)) < EPSILON
 #endif
+
+Matrix* matrix_create_identity_44()
+{
+	return matrix_create_44(
+		1, 0, 0, 0,
+		0, 1, 0, 0,
+		0, 0, 1, 0,
+		0, 0, 0, 1
+		);
+}
 
 Matrix* matrix_create_44(
     float _00, float _01, float _02, float _03,

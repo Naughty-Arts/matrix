@@ -56,5 +56,6 @@ Matrix* matrix_create_shearing(
 		float zy
 	);
 Matrix* matrix_create_view(Vector from, Vector to, Vector up);
+Matrix* matrix_create_identity_44();
 
 #endif

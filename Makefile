@@ -7,3 +7,7 @@ lib/matrix.h: matrix.h
 lib/libmatrix.a: matrix.c matrix.h
 	gcc -std=c2x -c matrix.c -o bin/matrix.o -I"C:\\libs" -L"C:\\libs" -lvector
 	ar rcs lib/libmatrix.a bin/matrix.o
+
+install: lib/matrix.h lib/libmatrix.a
+	cp lib/matrix.h "C:\\libs\\matrix.h"
+	cp lib/libmatrix.a "C:\\libs\\libmatrix.a"
