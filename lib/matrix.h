@@ -42,6 +42,7 @@ Matrix* matrix_times(Matrix* m1, Matrix* m2);
 Vector matrix_times_vector(Matrix* matrix, Vector v);
 _Bool matrix_equals(Matrix* m1, Matrix* m2);
 char *matrix_string(Matrix* matrix);
+void matrix_print(char* label, Matrix* m);
 Matrix* matrix_create_translation(float x, float y, float z);
 Matrix* matrix_create_scale(float x, float y, float z);
 Matrix* matrix_create_rotation_x(float r);

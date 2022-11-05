@@ -324,6 +324,13 @@ char *matrix_string(Matrix* matrix)
 	return buffer;
 }
 
+void matrix_print(char* label, Matrix* m)
+{
+	char* mstr = matrix_string(m);
+	printf("%s:\n%s\n", label, mstr);
+	free(mstr);
+}
+
 Matrix* matrix_create_translation(float x, float y, float z)
 {
 	return matrix_create_44(
@@ -359,7 +366,7 @@ Matrix* matrix_create_rotation_x(float r)
 Matrix* matrix_create_rotation_y(float r)
 {
 	float c = cos(r);
-	float s = cos(r);
+	float s = sin(r);
 	return matrix_create_44(
 			c, 0, s, 0,
 			0, 1, 0, 0,
